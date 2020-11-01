@@ -13,12 +13,11 @@ import { InputText } from 'primereact/inputtext';
 //importando Password (coloca censura na senha e nível de força de segurança da senha)
 import { Password } from 'primereact/password';
 
-function Login({ navigation }) {
+function Login({ navigation }) { 
   return (
     <div className="Formatacao">
       <header className="Formatacao-header"> 
-			  <img src={logo} className="Formatacao-logo"
-        alt="logo" />
+			  <img src={logo} className="Formatacao-logo" alt="logo" />
         <br />
         <span className="p-float-label">
           <InputText id="loginEmail" required={true}/>
@@ -30,7 +29,7 @@ function Login({ navigation }) {
           <label htmlhtmlfor="loginSenha">Digite sua Senha</label>
         </span>
         <br />
-        <Button label="Login"/>
+        <Button label="Login" onClick={() => navigation.navigate('Home')}/>
         <br />
         <Button label="Cadastro" onClick={() => navigation.navigate('Cadastro')}/>
       </header>

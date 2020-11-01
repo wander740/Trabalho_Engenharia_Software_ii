@@ -3,8 +3,9 @@
 }
 
 .Formatacao-logo {
-  height: 40vmin;
+  width: 150px;
   pointer-events: none;
+  margin: 0 auto;  
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -18,8 +19,19 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+}
+
+.Formatacao-header-2 {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -35,4 +47,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.center {
+  display: block;
+  margin: 0 auto;
 }

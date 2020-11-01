@@ -7,13 +7,14 @@ import 'primeicons/primeicons.css';
 //importando button
 import { Button } from 'primereact/button';
 
-export default function ConfirmarCadastro({ navigation }) {
+function confirmarCadastro({ navigation }) {
   return (
     <div className="Formatacao">
       <header className="Formatacao-header"> 
-				<h1> Cadastro Confirmado </h1>
+				<h3> Cadastro Confirmado </h3>
         <Button label="Confirmar" onClick={() => navigation.navigate('Login')}/>
       </header>
     </div>
   );
 }
+export default confirmarCadastro;

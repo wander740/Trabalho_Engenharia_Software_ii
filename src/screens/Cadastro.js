@@ -54,7 +54,7 @@ export default function Cadastro({ navigation }) {
         <br />
         <Button label="Cadastrar" onClick={() => navigation.navigate('ConfirmarCadastro')}/>
         <br />
-        <Button label="Voltar" onClick={() => navigation.navigate('Login')}/>
+        <Button label="Voltar" onClick={() => navigation.goBack(null)}/>
       </header>
     </div>
   );
