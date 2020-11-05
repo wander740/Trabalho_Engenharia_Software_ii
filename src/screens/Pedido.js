@@ -115,36 +115,41 @@ import { Dropdown } from 'primereact/dropdown';
       }
     ]*/
 
+function precoTotal(valorMassa, valorTamanho,valorSabor, valorBorda, valorRefrigerante){
+  return valorMassa+valorTamanho+valorSabor+valorBorda+valorRefrigerante;      
+    }
+
 class Pedido extends React.Component {
+    
     constructor(props) {
         super(props);
         this.state = {
             massaItems: [
-                { label: 'Tradicional', value: '1' },
-                { label: 'Fina', value: '2' },
+                { label: 'Tradicional', value: '1', valorMassa: 0 },
+                { label: 'Fina', value: '2',valorMassa: 0 },
             ], massa: '',
             tamanhoItems: [
-                { label: "grande", value: '3' },
-                { label: "media", value: '4' },
-                { label: "pequena", value: '5' },
+                { label: "grande", value: '3', valorTamanho: 20 },
+                { label: "media", value: '4', valorTamanho: 15 },
+                { label: "pequena", value: '5', valorTamanho: 10 },
             ], tamanho: '',
             saborItems: [
-                { label: "mussarela", value: '6' },
-                { label: "calabresa", value: '7' },
-                { label: "portuguesa", value: '8' },
-                { label: "bacon", value: '9' },
-                { label: "frango", value: '10' }
+                { label: "mussarela", value: '6', valorSabor: 10 },
+                { label: "calabresa", value: '7', valorSabor: 12 },
+                { label: "portuguesa", value: '8', valorSabor: 15 },
+                { label: "bacon", value: '9', valorSabor: 16 },
+                { label: "frango", value: '10', valorSabor: 15 }
             ], sabor: '',
             bordaItems: [
-                { label: "sem borda", value: '11' },
-                { label: "Catupiry", value: '12' },
-                { label: "Cheedar", value: '13' },
+                { label: "sem borda", value: '11', valorBorda: 0 },
+                { label: "Catupiry", value: '12', valorBorda: 3 },
+                { label: "Cheedar", value: '13', valorBorda: 3 },
             ], borda: '',
             refrigeranteItems: [
-                { label: "Sem refrigerante", value: '14' },
-                { label: "Coca-Cola 2L", value: '15' },
-                { label: "Guaraná 2L", value: '16' },
-                { label: "Fanta Uva 2L", value: '17' },
+                { label: "Sem refrigerante", value: '14', valorRefrigerante: 0 },
+                { label: "Coca-Cola 2L", value: '15', valorRefrigerante: 8 },
+                { label: "Guaraná 2L", value: '16', valorRefrigerante: 7 },
+                { label: "Fanta Uva 2L", value: '17', valorRefrigerante: 7.5 },
             ], refrigerante: '' 
         };
     }
@@ -153,7 +158,7 @@ class Pedido extends React.Component {
         return ( 
             <div className="Formatacao">
                 <header className="Formatacao-header"> 
-                    <Dropdown value={this.state.massa} options={this.state.massaItems} onChange={e => { this.setState({ massa: e.value }); }} placeholder='Massa'/>
+                    <Dropdown value={this.state.massa} options={this.state.massaItems} onChange={e => { this.setState({ massa: e.value }); } } placeholder='Massa'/>
                     <Dropdown value={this.state.tamanho} options={this.state.tamanhoItems} onChange={e => { this.setState({ tamanho: e.value }); }} placeholder='Tamanho'/>
                     <Dropdown value={this.state.sabor} options={this.state.saborItems} onChange={e => { this.setState({ sabor: e.value }); }} placeholder='Sabor'/>
                     <Dropdown value={this.state.borda} options={this.state.bordaItems} onChange={e => { this.setState({ borda: e.value }); }} placeholder='Borda'/>
